@@ -7,7 +7,7 @@ import java.time.LocalDate
 
 class BarFlowV1ConfSpec extends AnyFunSuite {
 
-  test("orchestrationTimestamp"){
+  test("orchestrationTimestamp") {
     assertResult(
       "1970-01-01T00:00:00Z"
     )(
@@ -18,7 +18,7 @@ class BarFlowV1ConfSpec extends AnyFunSuite {
     )
   }
 
-  test("orchestrationLocalDate"){
+  test("orchestrationLocalDate") {
     assertResult(
       LocalDate.parse("1970-01-01")
     )(
