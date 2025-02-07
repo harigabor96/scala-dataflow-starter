@@ -9,7 +9,9 @@ abstract class Conf(
                      args: CSeq[String] = Nil,
                      commandNameAndAliases: Seq[String] = Nil
                    ) extends ScallopConf(args, commandNameAndAliases) {
+
   errorMessageHandler = { message =>
     throw GenericScallopException(message)
   }
+
 }
