@@ -11,5 +11,5 @@ class BarFlowV1Conf(arguments: Seq[String]) extends Conf(arguments) {
 
   verify()
 
-  val orchestrationDate = LocalDate.parse(orchestrationTimestamp(), ISO_DATE_TIME)
+  val orchestrationLocalDate = LocalDate.parse(orchestrationTimestamp(), ISO_DATE_TIME)
 }

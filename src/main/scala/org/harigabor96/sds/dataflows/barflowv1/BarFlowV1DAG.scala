@@ -11,7 +11,7 @@ class BarFlowV1DAG(conf: BarFlowV1Conf) extends DAG {
   }
 
   def generateCaptionTask(): String = {
-    s"Bar!\nOrchestration Date: ${conf.orchestrationDate}"
+    s"Bar!\nOrchestration Date: ${conf.orchestrationLocalDate}"
   }
 
   def writeToConsoleTask(caption: String): Unit = {

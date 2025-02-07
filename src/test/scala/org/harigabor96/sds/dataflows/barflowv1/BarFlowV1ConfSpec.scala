@@ -18,11 +18,11 @@ class BarFlowV1ConfSpec extends AnyFunSuite {
     )
   }
 
-  test("orchestrationDate"){
+  test("orchestrationLocalDate"){
     assertResult(
       LocalDate.parse("1970-01-01")
     )(
-      new BarFlowV1Conf(Seq("--orchestration-timestamp", "1970-01-01T00:00:00Z")).orchestrationDate
+      new BarFlowV1Conf(Seq("--orchestration-timestamp", "1970-01-01T00:00:00Z")).orchestrationLocalDate
     )
   }
 
