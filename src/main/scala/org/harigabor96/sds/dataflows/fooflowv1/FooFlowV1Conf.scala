@@ -7,6 +7,8 @@ import java.time.format.DateTimeFormatter.ISO_DATE_TIME
 
 class FooFlowV1Conf(arguments: Seq[String]) extends ScallopConf(arguments) {
   val orchestrationTimestamp = opt[String](default = Some("1970-01-01T00:00:00Z"))
+
   verify()
+
   val orchestrationDate = LocalDate.parse(orchestrationTimestamp(), ISO_DATE_TIME)
 }
