@@ -6,16 +6,16 @@ class BarFlowV1DAG(conf: BarFlowV1Conf) extends DAG {
 
   def execute(): Unit = {
     writeToConsoleTask(
-      generateCaptionTask()
+      generateTextDataTask()
     )
   }
 
-  def generateCaptionTask(): String = {
+  def generateTextDataTask(): String = {
     s"Bar!\nOrchestration Date: ${conf.orchestrationLocalDate}"
   }
 
-  def writeToConsoleTask(caption: String): Unit = {
-    println(caption)
+  def writeToConsoleTask(textData: String): Unit = {
+    println(textData)
   }
 
 }

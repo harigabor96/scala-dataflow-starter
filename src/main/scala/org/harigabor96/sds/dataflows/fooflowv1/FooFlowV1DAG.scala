@@ -6,16 +6,16 @@ class FooFlowV1DAG(conf: FooFlowV1Conf) extends DAG {
 
   def execute(): Unit = {
     writeToConsoleTask(
-      generateCaptionTask()
+      generateTextDataTask()
     )
   }
 
-  def generateCaptionTask(): String = {
+  def generateTextDataTask(): String = {
     s"Foo!\nOrchestration Date: ${conf.orchestrationLocalDate}"
   }
 
-  def writeToConsoleTask(caption: String): Unit = {
-    println(caption)
+  def writeToConsoleTask(textData: String): Unit = {
+    println(textData)
   }
 
 }
