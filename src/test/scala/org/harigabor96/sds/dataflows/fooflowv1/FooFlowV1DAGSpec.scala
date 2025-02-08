@@ -8,14 +8,14 @@ import java.time.LocalDate
 
 class FooFlowV1DAGSpec extends AnyFunSuite {
 
-  test("generateCaptionTask()") {
+  test("generateTextDataTask()") {
     assertResult(
       s"Foo!\nOrchestration Date: 1970-01-01"
     )(
       new FooFlowV1DAG({val c = mock[FooFlowV1Conf]
         c.orchestrationLocalDate returns LocalDate.parse("1970-01-01")
       })
-      .generateCaptionTask()
+      .generateTextDataTask()
     )
   }
 
