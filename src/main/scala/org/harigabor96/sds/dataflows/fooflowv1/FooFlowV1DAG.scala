@@ -11,7 +11,7 @@ class FooFlowV1DAG(conf: FooFlowV1Conf) extends DAG {
   }
 
   def generateTextDataTask(): String = {
-    s"Foo!\nOrchestration Date: ${conf.orchestrationLocalDate}"
+    s"Foo!\nOrchestration Date: ${conf.orchestrationDate}"
   }
 
   def writeToConsoleTask(textData: String): Unit = {
