@@ -2,7 +2,7 @@ package org.harigabor96.sds.dataflows.barflowv1
 
 import org.harigabor96.sds.shared.DAG
 
-class BarFlowV1DAG(conf: BarFlowV1Params) extends DAG {
+class BarFlowV1DAG(conf: BarFlowV1Conf) extends DAG {
 
   def execute(): Unit = {
     writeToConsoleTask(
