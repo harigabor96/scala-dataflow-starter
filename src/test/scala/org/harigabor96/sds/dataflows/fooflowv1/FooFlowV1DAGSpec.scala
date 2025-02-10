@@ -12,7 +12,7 @@ class FooFlowV1DAGSpec extends AnyFunSuite {
     assertResult(
       s"Foo!\nOrchestration Date: 1970-01-01"
     )(
-      new FooFlowV1DAG({val c = mock[FooFlowV1Conf]
+      new FooFlowV1DAG({val c = mock[FooFlowV1Params]
         c.orchestrationLocalDate returns LocalDate.parse("1970-01-01")
       })
       .generateTextDataTask()
@@ -25,7 +25,7 @@ class FooFlowV1DAGSpec extends AnyFunSuite {
     )({
       val stream = new java.io.ByteArrayOutputStream()
       Console.withOut(stream) {
-        new FooFlowV1DAG(mock[FooFlowV1Conf])
+        new FooFlowV1DAG(mock[FooFlowV1Params])
           .writeToConsoleTask("Potato")
       }
       stream.toString.trim

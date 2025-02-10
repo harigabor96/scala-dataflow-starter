@@ -1,20 +1,20 @@
-package org.harigabor96.sds.dataflows.barflowv1
+package org.harigabor96.sds.dataflows.fooflowv1
 
 import org.rogach.scallop.exceptions.GenericScallopException
 import org.scalatest.funsuite.AnyFunSuite
 
 import java.time.LocalDate
 
-class BarFlowV1ConfSpec extends AnyFunSuite {
+class FooFlowV1ParamsSpec extends AnyFunSuite {
 
   test("orchestrationTimestamp") {
     assertResult(
       "1970-01-01T00:00:00Z"
     )(
-      new BarFlowV1Conf(Seq("--orchestration-timestamp", "1970-01-01T00:00:00Z")).orchestrationTimestamp()
+      new FooFlowV1Params(Seq("--orchestration-timestamp", "1970-01-01T00:00:00Z")).orchestrationTimestamp()
     )
     assertThrows[GenericScallopException](
-      new BarFlowV1Conf(Seq()).orchestrationTimestamp
+      new FooFlowV1Params(Seq()).orchestrationTimestamp
     )
   }
 
@@ -22,7 +22,7 @@ class BarFlowV1ConfSpec extends AnyFunSuite {
     assertResult(
       LocalDate.parse("1970-01-01")
     )(
-      new BarFlowV1Conf(Seq("--orchestration-timestamp", "1970-01-01T00:00:00Z")).orchestrationLocalDate
+      new FooFlowV1Params(Seq("--orchestration-timestamp", "1970-01-01T00:00:00Z")).orchestrationLocalDate
     )
   }
 

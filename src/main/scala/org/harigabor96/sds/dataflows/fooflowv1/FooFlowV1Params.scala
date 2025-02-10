@@ -1,12 +1,12 @@
-package org.harigabor96.sds.dataflows.barflowv1
+package org.harigabor96.sds.dataflows.fooflowv1
 
-import org.harigabor96.sds.shared.Conf
+import org.harigabor96.sds.shared.Params
 import org.rogach.scallop._
 
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter.ISO_DATE_TIME
 
-class BarFlowV1Conf(arguments: Seq[String]) extends Conf(arguments) {
+class FooFlowV1Params(arguments: Seq[String]) extends Params(arguments) {
   val orchestrationTimestamp = opt[String](required = true)
 
   verify()
