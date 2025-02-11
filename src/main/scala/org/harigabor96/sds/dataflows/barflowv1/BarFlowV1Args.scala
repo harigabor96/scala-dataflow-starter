@@ -1,10 +1,9 @@
 package org.harigabor96.sds.dataflows.barflowv1
 
-import org.harigabor96.sds.shared.Params
+import org.harigabor96.sds.shared.Args
 import org.rogach.scallop._
 
-class BarFlowV1Params(arguments: Seq[String]) extends Params(arguments) {
+class BarFlowV1Args(args: Seq[String]) extends Args(args) {
   val orchestrationTimestamp = opt[String]()
-
   verify()
 }

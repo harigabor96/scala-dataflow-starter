@@ -3,6 +3,7 @@ package org.harigabor96.sds.dataflows.fooflowv1
 import org.scalatest.funsuite.AnyFunSuite
 
 import java.time.LocalDate
+import java.time.format.DateTimeParseException
 
 class FooFlowV1ConfSpec extends AnyFunSuite {
 
@@ -10,10 +11,13 @@ class FooFlowV1ConfSpec extends AnyFunSuite {
     assertResult(
       LocalDate.parse("1970-01-01")
     )(
-      FooFlowV1Conf(new FooFlowV1Params(Seq("--orchestration-timestamp", "1970-01-01T00:00:00Z"))).orchestrationDate
+      new FooFlowV1Conf(new FooFlowV1Args(Seq("--orchestration-timestamp", "1970-01-01T00:00:00Z"))).orchestrationDate
+    )
+    assertThrows[DateTimeParseException](
+      new FooFlowV1Conf(new FooFlowV1Args(Seq("--orchestration-timestamp", "Potato"))).orchestrationDate
     )
     assertThrows[NoSuchElementException](
-      FooFlowV1Conf(new FooFlowV1Params(Seq())).orchestrationDate
+      new FooFlowV1Conf(new FooFlowV1Args(Seq())).orchestrationDate
     )
   }
 
