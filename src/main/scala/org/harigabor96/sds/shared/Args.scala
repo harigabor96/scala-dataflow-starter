@@ -5,7 +5,7 @@ import org.rogach.scallop.exceptions.GenericScallopException
 
 import scala.collection.{Seq => CSeq}
 
-abstract class Params(
+abstract class Args(
                      args: CSeq[String] = Nil,
                      commandNameAndAliases: Seq[String] = Nil
                    ) extends ScallopConf(args, commandNameAndAliases) {
