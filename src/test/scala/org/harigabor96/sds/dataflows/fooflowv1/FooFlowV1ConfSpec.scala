@@ -12,6 +12,9 @@ class FooFlowV1ConfSpec extends AnyFunSuite {
     )(
       FooFlowV1Conf(new FooFlowV1Params(Seq("--orchestration-timestamp", "1970-01-01T00:00:00Z"))).orchestrationDate
     )
+    assertThrows[NoSuchElementException](
+      FooFlowV1Conf(new FooFlowV1Params(Seq())).orchestrationDate
+    )
   }
 
 }
