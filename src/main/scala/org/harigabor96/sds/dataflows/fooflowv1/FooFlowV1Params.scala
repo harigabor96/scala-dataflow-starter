@@ -4,7 +4,7 @@ import org.harigabor96.sds.shared.Params
 import org.rogach.scallop._
 
 class FooFlowV1Params(arguments: Seq[String]) extends Params(arguments) {
-  val orchestrationTimestamp = opt[String](required = true)
+  val orchestrationTimestamp = opt[String]()
 
   verify()
 }

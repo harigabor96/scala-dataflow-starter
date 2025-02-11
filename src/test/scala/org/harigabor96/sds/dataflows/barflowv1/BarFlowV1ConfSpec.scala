@@ -12,6 +12,9 @@ class BarFlowV1ConfSpec extends AnyFunSuite {
     )(
       BarFlowV1Conf(new BarFlowV1Params(Seq("--orchestration-timestamp", "1970-01-01T00:00:00Z"))).orchestrationDate
     )
+    assertThrows[NoSuchElementException](
+      BarFlowV1Conf(new BarFlowV1Params(Seq())).orchestrationDate
+    )
   }
 
 }
