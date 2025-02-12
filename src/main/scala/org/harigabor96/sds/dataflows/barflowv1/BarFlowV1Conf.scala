@@ -4,5 +4,5 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter.ISO_DATE_TIME
 
 class BarFlowV1Conf(args: BarFlowV1Args) {
-  val orchestrationDate = LocalDate.parse(args.orchestrationTimestamp(), ISO_DATE_TIME)
+  lazy val orchestrationDate = LocalDate.parse(args.orchestrationTimestamp(), ISO_DATE_TIME)
 }
