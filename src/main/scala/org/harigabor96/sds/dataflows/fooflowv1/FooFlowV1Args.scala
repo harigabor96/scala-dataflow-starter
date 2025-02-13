@@ -5,5 +5,6 @@ import org.rogach.scallop._
 
 class FooFlowV1Args(args: Seq[String]) extends Args(args) {
   val orchestrationTimestamp = opt[String]()
+  val message = opt[String]()
   verify()
 }

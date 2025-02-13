@@ -5,4 +5,5 @@ import java.time.format.DateTimeFormatter.ISO_DATE_TIME
 
 class BarFlowV1Conf(args: BarFlowV1Args) {
   lazy val orchestrationDate = LocalDate.parse(args.orchestrationTimestamp(), ISO_DATE_TIME)
+  lazy val message = args.message()
 }

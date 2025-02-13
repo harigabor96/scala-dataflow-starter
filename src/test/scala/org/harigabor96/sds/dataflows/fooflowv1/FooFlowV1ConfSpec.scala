@@ -21,4 +21,15 @@ class FooFlowV1ConfSpec extends AnyFunSuite {
     )
   }
 
+  test("message") {
+    assertResult(
+      "Potato"
+    )(
+      new FooFlowV1Conf(new FooFlowV1Args(Seq("--message", "Potato"))).message
+    )
+    assertThrows[NoSuchElementException](
+      new FooFlowV1Conf(new FooFlowV1Args(Seq())).message
+    )
+  }
+
 }

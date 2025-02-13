@@ -10,10 +10,11 @@ class FooFlowV1DAGSpec extends AnyFunSuite {
 
   test("generateTextDataTask()") {
     assertResult(
-      s"Foo!\nOrchestration Date: 1970-01-01"
+      s"Foo!\nMessage: Potato\nOrchestration Date: 1970-01-01"
     )(
       new FooFlowV1DAG({val c = mock[FooFlowV1Conf]
         c.orchestrationDate returns LocalDate.parse("1970-01-01")
+        c.message returns "Potato"
       })
       .generateTextDataTask()
     )
