@@ -21,4 +21,15 @@ class BarFlowV1ConfSpec extends AnyFunSuite {
     )
   }
 
+  test("message") {
+    assertResult(
+      "Potato"
+    )(
+      new BarFlowV1Conf(new BarFlowV1Args(Seq("--message", "Potato"))).message
+    )
+    assertThrows[NoSuchElementException](
+      new BarFlowV1Conf(new BarFlowV1Args(Seq())).message
+    )
+  }
+
 }
